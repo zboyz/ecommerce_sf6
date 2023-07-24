@@ -1,0 +1,16 @@
+body {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.952), rgba(0, 0, 0, 0.5)), url("../uploads/fond ecran.jpg");
+}
+.card {
+    backdrop-filter: blur(15px);
+}
+
+.logoLaBootik {
+    position: relative;
+    width: 300px;
+    top: 0px;
+    left: 39%;
+}
