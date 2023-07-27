@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main class="container">
+        <section class="row">
+            <div class="logoLaBootik col-12 text-center">
+                <img src="{{ asset('assets/uploads/logo La Bootik.png') }}" class="w-100" alt="logo">
+            </div>
+            {% for category in categories %}
+                {% if category.parent == null %}
+                    <div class="col-12 mb-3 text-center fst-italic text-uppercase">
+                        <h2>{{ category.name }}</h2>
+                    </div>
+                    <hr class="fw-bold">
+                {% else %}
+                    <div class="col-4 mb-5">
+                        <div class="card h-100 bg-transparent">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">{{ category.name }}</h3>
+                                <a href="{{ path('categories_list', {"id": category.id, "slug": category.slug}) }}" class="btn btn-primary">Voir les produits</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </section>
+    </main>
+{% endblock %}
